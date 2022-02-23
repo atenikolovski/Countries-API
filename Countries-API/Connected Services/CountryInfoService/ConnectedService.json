@@ -10,6 +10,7 @@
     "namespaceMappings": [
       "*, CountryInfoService"
     ],
+    "sync": true,
     "targetFramework": "net5.0",
     "typeReuseMode": "None"
   }

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Countries_API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220221231735_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20220222170539_CreateTablesLanguageAndCountries")]
+    partial class CreateTablesLanguageAndCountries
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -44,16 +44,21 @@ namespace Countries_API.Migrations
 
             modelBuilder.Entity("Countries_API.Data.Models.Language", b =>
                 {
-                    b.Property<string>("IsoCode")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("CountryISOCode")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("IsoCode")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("IsoCode");
+                    b.HasKey("Id");
 
                     b.HasIndex("CountryISOCode");
 

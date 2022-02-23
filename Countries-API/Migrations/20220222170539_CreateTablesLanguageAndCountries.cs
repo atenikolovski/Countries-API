@@ -2,7 +2,7 @@
 
 namespace Countries_API.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class CreateTablesLanguageAndCountries : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -25,13 +25,15 @@ namespace Countries_API.Migrations
                 name: "Language",
                 columns: table => new
                 {
-                    IsoCode = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IsoCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CountryISOCode = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Language", x => x.IsoCode);
+                    table.PrimaryKey("PK_Language", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Language_Countries_CountryISOCode",
                         column: x => x.CountryISOCode,

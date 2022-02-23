@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Countries_API.Services;
+using CountryInfoService;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,5 +13,17 @@ namespace Countries_API.Controllers
     [ApiController]
     public class CountriesController : ControllerBase
     {
+        public CountriesService _countriesService;
+
+        public CountriesController(CountriesService countriesService)
+        {
+            _countriesService = countriesService;
+        }
+
+        [HttpPost("populate")]
+        public void Populate()
+        {
+            _countriesService.PopulateCountries();
+        }
     }
 }

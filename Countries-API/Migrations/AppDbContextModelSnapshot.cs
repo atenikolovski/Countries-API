@@ -42,16 +42,21 @@ namespace Countries_API.Migrations
 
             modelBuilder.Entity("Countries_API.Data.Models.Language", b =>
                 {
-                    b.Property<string>("IsoCode")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("CountryISOCode")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("IsoCode")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("IsoCode");
+                    b.HasKey("Id");
 
                     b.HasIndex("CountryISOCode");
 

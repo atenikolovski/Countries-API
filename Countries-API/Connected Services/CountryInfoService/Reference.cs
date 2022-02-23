@@ -329,65 +329,149 @@ namespace CountryInfoService
     public interface CountryInfoServiceSoapType
     {
         
+        // CODEGEN: Generating message contract since element name ListOfContinentsByNameResult from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.ListOfContinentsByNameResponse ListOfContinentsByName(CountryInfoService.ListOfContinentsByNameRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.ListOfContinentsByNameResponse> ListOfContinentsByNameAsync(CountryInfoService.ListOfContinentsByNameRequest request);
+        
+        // CODEGEN: Generating message contract since element name ListOfContinentsByCodeResult from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.ListOfContinentsByCodeResponse ListOfContinentsByCode(CountryInfoService.ListOfContinentsByCodeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.ListOfContinentsByCodeResponse> ListOfContinentsByCodeAsync(CountryInfoService.ListOfContinentsByCodeRequest request);
         
+        // CODEGEN: Generating message contract since element name ListOfCurrenciesByNameResult from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.ListOfCurrenciesByNameResponse ListOfCurrenciesByName(CountryInfoService.ListOfCurrenciesByNameRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.ListOfCurrenciesByNameResponse> ListOfCurrenciesByNameAsync(CountryInfoService.ListOfCurrenciesByNameRequest request);
+        
+        // CODEGEN: Generating message contract since element name ListOfCurrenciesByCodeResult from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.ListOfCurrenciesByCodeResponse ListOfCurrenciesByCode(CountryInfoService.ListOfCurrenciesByCodeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.ListOfCurrenciesByCodeResponse> ListOfCurrenciesByCodeAsync(CountryInfoService.ListOfCurrenciesByCodeRequest request);
         
+        // CODEGEN: Generating message contract since element name sCurrencyISOCode from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.CurrencyNameResponse CurrencyName(CountryInfoService.CurrencyNameRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.CurrencyNameResponse> CurrencyNameAsync(CountryInfoService.CurrencyNameRequest request);
+        
+        // CODEGEN: Generating message contract since element name ListOfCountryNamesByCodeResult from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.ListOfCountryNamesByCodeResponse ListOfCountryNamesByCode(CountryInfoService.ListOfCountryNamesByCodeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.ListOfCountryNamesByCodeResponse> ListOfCountryNamesByCodeAsync(CountryInfoService.ListOfCountryNamesByCodeRequest request);
         
+        // CODEGEN: Generating message contract since element name ListOfCountryNamesByNameResult from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.ListOfCountryNamesByNameResponse ListOfCountryNamesByName(CountryInfoService.ListOfCountryNamesByNameRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.ListOfCountryNamesByNameResponse> ListOfCountryNamesByNameAsync(CountryInfoService.ListOfCountryNamesByNameRequest request);
+        
+        // CODEGEN: Generating message contract since element name ListOfCountryNamesGroupedByContinentResult from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.ListOfCountryNamesGroupedByContinentResponse ListOfCountryNamesGroupedByContinent(CountryInfoService.ListOfCountryNamesGroupedByContinentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.ListOfCountryNamesGroupedByContinentResponse> ListOfCountryNamesGroupedByContinentAsync(CountryInfoService.ListOfCountryNamesGroupedByContinentRequest request);
         
+        // CODEGEN: Generating message contract since element name sCountryISOCode from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.CountryNameResponse CountryName(CountryInfoService.CountryNameRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.CountryNameResponse> CountryNameAsync(CountryInfoService.CountryNameRequest request);
+        
+        // CODEGEN: Generating message contract since element name sCountryName from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.CountryISOCodeResponse CountryISOCode(CountryInfoService.CountryISOCodeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.CountryISOCodeResponse> CountryISOCodeAsync(CountryInfoService.CountryISOCodeRequest request);
         
+        // CODEGEN: Generating message contract since element name sCountryISOCode from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.CapitalCityResponse CapitalCity(CountryInfoService.CapitalCityRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.CapitalCityResponse> CapitalCityAsync(CountryInfoService.CapitalCityRequest request);
+        
+        // CODEGEN: Generating message contract since element name sCountryISOCode from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.CountryCurrencyResponse CountryCurrency(CountryInfoService.CountryCurrencyRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.CountryCurrencyResponse> CountryCurrencyAsync(CountryInfoService.CountryCurrencyRequest request);
         
+        // CODEGEN: Generating message contract since element name sCountryISOCode from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.CountryFlagResponse CountryFlag(CountryInfoService.CountryFlagRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.CountryFlagResponse> CountryFlagAsync(CountryInfoService.CountryFlagRequest request);
+        
+        // CODEGEN: Generating message contract since element name sCountryISOCode from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.CountryIntPhoneCodeResponse CountryIntPhoneCode(CountryInfoService.CountryIntPhoneCodeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.CountryIntPhoneCodeResponse> CountryIntPhoneCodeAsync(CountryInfoService.CountryIntPhoneCodeRequest request);
         
+        // CODEGEN: Generating message contract since element name sCountryISOCode from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.FullCountryInfoResponse FullCountryInfo(CountryInfoService.FullCountryInfoRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.FullCountryInfoResponse> FullCountryInfoAsync(CountryInfoService.FullCountryInfoRequest request);
+        
+        // CODEGEN: Generating message contract since element name FullCountryInfoAllCountriesResult from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.FullCountryInfoAllCountriesResponse FullCountryInfoAllCountries(CountryInfoService.FullCountryInfoAllCountriesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.FullCountryInfoAllCountriesResponse> FullCountryInfoAllCountriesAsync(CountryInfoService.FullCountryInfoAllCountriesRequest request);
         
+        // CODEGEN: Generating message contract since element name sISOCurrencyCode from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.CountriesUsingCurrencyResponse CountriesUsingCurrency(CountryInfoService.CountriesUsingCurrencyRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.CountriesUsingCurrencyResponse> CountriesUsingCurrencyAsync(CountryInfoService.CountriesUsingCurrencyRequest request);
+        
+        // CODEGEN: Generating message contract since element name ListOfLanguagesByNameResult from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.ListOfLanguagesByNameResponse ListOfLanguagesByName(CountryInfoService.ListOfLanguagesByNameRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.ListOfLanguagesByNameResponse> ListOfLanguagesByNameAsync(CountryInfoService.ListOfLanguagesByNameRequest request);
         
+        // CODEGEN: Generating message contract since element name ListOfLanguagesByCodeResult from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.ListOfLanguagesByCodeResponse ListOfLanguagesByCode(CountryInfoService.ListOfLanguagesByCodeRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.ListOfLanguagesByCodeResponse> ListOfLanguagesByCodeAsync(CountryInfoService.ListOfLanguagesByCodeRequest request);
         
+        // CODEGEN: Generating message contract since element name sISOCode from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.LanguageNameResponse LanguageName(CountryInfoService.LanguageNameRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.LanguageNameResponse> LanguageNameAsync(CountryInfoService.LanguageNameRequest request);
+        
+        // CODEGEN: Generating message contract since element name sLanguageName from namespace http://www.oorsprong.org/websamples.countryinfo is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        CountryInfoService.LanguageISOCodeResponse LanguageISOCode(CountryInfoService.LanguageISOCodeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<CountryInfoService.LanguageISOCodeResponse> LanguageISOCodeAsync(CountryInfoService.LanguageISOCodeRequest request);
@@ -2037,6 +2121,20 @@ namespace CountryInfoService
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.ListOfContinentsByNameResponse CountryInfoService.CountryInfoServiceSoapType.ListOfContinentsByName(CountryInfoService.ListOfContinentsByNameRequest request)
+        {
+            return base.Channel.ListOfContinentsByName(request);
+        }
+        
+        public CountryInfoService.tContinent[] ListOfContinentsByName()
+        {
+            CountryInfoService.ListOfContinentsByNameRequest inValue = new CountryInfoService.ListOfContinentsByNameRequest();
+            inValue.Body = new CountryInfoService.ListOfContinentsByNameRequestBody();
+            CountryInfoService.ListOfContinentsByNameResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).ListOfContinentsByName(inValue);
+            return retVal.Body.ListOfContinentsByNameResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<CountryInfoService.ListOfContinentsByNameResponse> CountryInfoService.CountryInfoServiceSoapType.ListOfContinentsByNameAsync(CountryInfoService.ListOfContinentsByNameRequest request)
         {
             return base.Channel.ListOfContinentsByNameAsync(request);
@@ -2047,6 +2145,20 @@ namespace CountryInfoService
             CountryInfoService.ListOfContinentsByNameRequest inValue = new CountryInfoService.ListOfContinentsByNameRequest();
             inValue.Body = new CountryInfoService.ListOfContinentsByNameRequestBody();
             return ((CountryInfoService.CountryInfoServiceSoapType)(this)).ListOfContinentsByNameAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.ListOfContinentsByCodeResponse CountryInfoService.CountryInfoServiceSoapType.ListOfContinentsByCode(CountryInfoService.ListOfContinentsByCodeRequest request)
+        {
+            return base.Channel.ListOfContinentsByCode(request);
+        }
+        
+        public CountryInfoService.tContinent[] ListOfContinentsByCode()
+        {
+            CountryInfoService.ListOfContinentsByCodeRequest inValue = new CountryInfoService.ListOfContinentsByCodeRequest();
+            inValue.Body = new CountryInfoService.ListOfContinentsByCodeRequestBody();
+            CountryInfoService.ListOfContinentsByCodeResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).ListOfContinentsByCode(inValue);
+            return retVal.Body.ListOfContinentsByCodeResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2063,6 +2175,20 @@ namespace CountryInfoService
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.ListOfCurrenciesByNameResponse CountryInfoService.CountryInfoServiceSoapType.ListOfCurrenciesByName(CountryInfoService.ListOfCurrenciesByNameRequest request)
+        {
+            return base.Channel.ListOfCurrenciesByName(request);
+        }
+        
+        public CountryInfoService.tCurrency[] ListOfCurrenciesByName()
+        {
+            CountryInfoService.ListOfCurrenciesByNameRequest inValue = new CountryInfoService.ListOfCurrenciesByNameRequest();
+            inValue.Body = new CountryInfoService.ListOfCurrenciesByNameRequestBody();
+            CountryInfoService.ListOfCurrenciesByNameResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).ListOfCurrenciesByName(inValue);
+            return retVal.Body.ListOfCurrenciesByNameResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<CountryInfoService.ListOfCurrenciesByNameResponse> CountryInfoService.CountryInfoServiceSoapType.ListOfCurrenciesByNameAsync(CountryInfoService.ListOfCurrenciesByNameRequest request)
         {
             return base.Channel.ListOfCurrenciesByNameAsync(request);
@@ -2076,6 +2202,20 @@ namespace CountryInfoService
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.ListOfCurrenciesByCodeResponse CountryInfoService.CountryInfoServiceSoapType.ListOfCurrenciesByCode(CountryInfoService.ListOfCurrenciesByCodeRequest request)
+        {
+            return base.Channel.ListOfCurrenciesByCode(request);
+        }
+        
+        public CountryInfoService.tCurrency[] ListOfCurrenciesByCode()
+        {
+            CountryInfoService.ListOfCurrenciesByCodeRequest inValue = new CountryInfoService.ListOfCurrenciesByCodeRequest();
+            inValue.Body = new CountryInfoService.ListOfCurrenciesByCodeRequestBody();
+            CountryInfoService.ListOfCurrenciesByCodeResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).ListOfCurrenciesByCode(inValue);
+            return retVal.Body.ListOfCurrenciesByCodeResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<CountryInfoService.ListOfCurrenciesByCodeResponse> CountryInfoService.CountryInfoServiceSoapType.ListOfCurrenciesByCodeAsync(CountryInfoService.ListOfCurrenciesByCodeRequest request)
         {
             return base.Channel.ListOfCurrenciesByCodeAsync(request);
@@ -2086,6 +2226,21 @@ namespace CountryInfoService
             CountryInfoService.ListOfCurrenciesByCodeRequest inValue = new CountryInfoService.ListOfCurrenciesByCodeRequest();
             inValue.Body = new CountryInfoService.ListOfCurrenciesByCodeRequestBody();
             return ((CountryInfoService.CountryInfoServiceSoapType)(this)).ListOfCurrenciesByCodeAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.CurrencyNameResponse CountryInfoService.CountryInfoServiceSoapType.CurrencyName(CountryInfoService.CurrencyNameRequest request)
+        {
+            return base.Channel.CurrencyName(request);
+        }
+        
+        public string CurrencyName(string sCurrencyISOCode)
+        {
+            CountryInfoService.CurrencyNameRequest inValue = new CountryInfoService.CurrencyNameRequest();
+            inValue.Body = new CountryInfoService.CurrencyNameRequestBody();
+            inValue.Body.sCurrencyISOCode = sCurrencyISOCode;
+            CountryInfoService.CurrencyNameResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).CurrencyName(inValue);
+            return retVal.Body.CurrencyNameResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2103,6 +2258,20 @@ namespace CountryInfoService
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.ListOfCountryNamesByCodeResponse CountryInfoService.CountryInfoServiceSoapType.ListOfCountryNamesByCode(CountryInfoService.ListOfCountryNamesByCodeRequest request)
+        {
+            return base.Channel.ListOfCountryNamesByCode(request);
+        }
+        
+        public CountryInfoService.tCountryCodeAndName[] ListOfCountryNamesByCode()
+        {
+            CountryInfoService.ListOfCountryNamesByCodeRequest inValue = new CountryInfoService.ListOfCountryNamesByCodeRequest();
+            inValue.Body = new CountryInfoService.ListOfCountryNamesByCodeRequestBody();
+            CountryInfoService.ListOfCountryNamesByCodeResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).ListOfCountryNamesByCode(inValue);
+            return retVal.Body.ListOfCountryNamesByCodeResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<CountryInfoService.ListOfCountryNamesByCodeResponse> CountryInfoService.CountryInfoServiceSoapType.ListOfCountryNamesByCodeAsync(CountryInfoService.ListOfCountryNamesByCodeRequest request)
         {
             return base.Channel.ListOfCountryNamesByCodeAsync(request);
@@ -2113,6 +2282,20 @@ namespace CountryInfoService
             CountryInfoService.ListOfCountryNamesByCodeRequest inValue = new CountryInfoService.ListOfCountryNamesByCodeRequest();
             inValue.Body = new CountryInfoService.ListOfCountryNamesByCodeRequestBody();
             return ((CountryInfoService.CountryInfoServiceSoapType)(this)).ListOfCountryNamesByCodeAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.ListOfCountryNamesByNameResponse CountryInfoService.CountryInfoServiceSoapType.ListOfCountryNamesByName(CountryInfoService.ListOfCountryNamesByNameRequest request)
+        {
+            return base.Channel.ListOfCountryNamesByName(request);
+        }
+        
+        public CountryInfoService.tCountryCodeAndName[] ListOfCountryNamesByName()
+        {
+            CountryInfoService.ListOfCountryNamesByNameRequest inValue = new CountryInfoService.ListOfCountryNamesByNameRequest();
+            inValue.Body = new CountryInfoService.ListOfCountryNamesByNameRequestBody();
+            CountryInfoService.ListOfCountryNamesByNameResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).ListOfCountryNamesByName(inValue);
+            return retVal.Body.ListOfCountryNamesByNameResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2129,6 +2312,20 @@ namespace CountryInfoService
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.ListOfCountryNamesGroupedByContinentResponse CountryInfoService.CountryInfoServiceSoapType.ListOfCountryNamesGroupedByContinent(CountryInfoService.ListOfCountryNamesGroupedByContinentRequest request)
+        {
+            return base.Channel.ListOfCountryNamesGroupedByContinent(request);
+        }
+        
+        public CountryInfoService.tCountryCodeAndNameGroupedByContinent[] ListOfCountryNamesGroupedByContinent()
+        {
+            CountryInfoService.ListOfCountryNamesGroupedByContinentRequest inValue = new CountryInfoService.ListOfCountryNamesGroupedByContinentRequest();
+            inValue.Body = new CountryInfoService.ListOfCountryNamesGroupedByContinentRequestBody();
+            CountryInfoService.ListOfCountryNamesGroupedByContinentResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).ListOfCountryNamesGroupedByContinent(inValue);
+            return retVal.Body.ListOfCountryNamesGroupedByContinentResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<CountryInfoService.ListOfCountryNamesGroupedByContinentResponse> CountryInfoService.CountryInfoServiceSoapType.ListOfCountryNamesGroupedByContinentAsync(CountryInfoService.ListOfCountryNamesGroupedByContinentRequest request)
         {
             return base.Channel.ListOfCountryNamesGroupedByContinentAsync(request);
@@ -2139,6 +2336,21 @@ namespace CountryInfoService
             CountryInfoService.ListOfCountryNamesGroupedByContinentRequest inValue = new CountryInfoService.ListOfCountryNamesGroupedByContinentRequest();
             inValue.Body = new CountryInfoService.ListOfCountryNamesGroupedByContinentRequestBody();
             return ((CountryInfoService.CountryInfoServiceSoapType)(this)).ListOfCountryNamesGroupedByContinentAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.CountryNameResponse CountryInfoService.CountryInfoServiceSoapType.CountryName(CountryInfoService.CountryNameRequest request)
+        {
+            return base.Channel.CountryName(request);
+        }
+        
+        public string CountryName(string sCountryISOCode)
+        {
+            CountryInfoService.CountryNameRequest inValue = new CountryInfoService.CountryNameRequest();
+            inValue.Body = new CountryInfoService.CountryNameRequestBody();
+            inValue.Body.sCountryISOCode = sCountryISOCode;
+            CountryInfoService.CountryNameResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).CountryName(inValue);
+            return retVal.Body.CountryNameResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2156,6 +2368,21 @@ namespace CountryInfoService
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.CountryISOCodeResponse CountryInfoService.CountryInfoServiceSoapType.CountryISOCode(CountryInfoService.CountryISOCodeRequest request)
+        {
+            return base.Channel.CountryISOCode(request);
+        }
+        
+        public string CountryISOCode(string sCountryName)
+        {
+            CountryInfoService.CountryISOCodeRequest inValue = new CountryInfoService.CountryISOCodeRequest();
+            inValue.Body = new CountryInfoService.CountryISOCodeRequestBody();
+            inValue.Body.sCountryName = sCountryName;
+            CountryInfoService.CountryISOCodeResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).CountryISOCode(inValue);
+            return retVal.Body.CountryISOCodeResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<CountryInfoService.CountryISOCodeResponse> CountryInfoService.CountryInfoServiceSoapType.CountryISOCodeAsync(CountryInfoService.CountryISOCodeRequest request)
         {
             return base.Channel.CountryISOCodeAsync(request);
@@ -2167,6 +2394,21 @@ namespace CountryInfoService
             inValue.Body = new CountryInfoService.CountryISOCodeRequestBody();
             inValue.Body.sCountryName = sCountryName;
             return ((CountryInfoService.CountryInfoServiceSoapType)(this)).CountryISOCodeAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.CapitalCityResponse CountryInfoService.CountryInfoServiceSoapType.CapitalCity(CountryInfoService.CapitalCityRequest request)
+        {
+            return base.Channel.CapitalCity(request);
+        }
+        
+        public string CapitalCity(string sCountryISOCode)
+        {
+            CountryInfoService.CapitalCityRequest inValue = new CountryInfoService.CapitalCityRequest();
+            inValue.Body = new CountryInfoService.CapitalCityRequestBody();
+            inValue.Body.sCountryISOCode = sCountryISOCode;
+            CountryInfoService.CapitalCityResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).CapitalCity(inValue);
+            return retVal.Body.CapitalCityResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2184,6 +2426,21 @@ namespace CountryInfoService
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.CountryCurrencyResponse CountryInfoService.CountryInfoServiceSoapType.CountryCurrency(CountryInfoService.CountryCurrencyRequest request)
+        {
+            return base.Channel.CountryCurrency(request);
+        }
+        
+        public CountryInfoService.tCurrency CountryCurrency(string sCountryISOCode)
+        {
+            CountryInfoService.CountryCurrencyRequest inValue = new CountryInfoService.CountryCurrencyRequest();
+            inValue.Body = new CountryInfoService.CountryCurrencyRequestBody();
+            inValue.Body.sCountryISOCode = sCountryISOCode;
+            CountryInfoService.CountryCurrencyResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).CountryCurrency(inValue);
+            return retVal.Body.CountryCurrencyResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<CountryInfoService.CountryCurrencyResponse> CountryInfoService.CountryInfoServiceSoapType.CountryCurrencyAsync(CountryInfoService.CountryCurrencyRequest request)
         {
             return base.Channel.CountryCurrencyAsync(request);
@@ -2195,6 +2452,21 @@ namespace CountryInfoService
             inValue.Body = new CountryInfoService.CountryCurrencyRequestBody();
             inValue.Body.sCountryISOCode = sCountryISOCode;
             return ((CountryInfoService.CountryInfoServiceSoapType)(this)).CountryCurrencyAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.CountryFlagResponse CountryInfoService.CountryInfoServiceSoapType.CountryFlag(CountryInfoService.CountryFlagRequest request)
+        {
+            return base.Channel.CountryFlag(request);
+        }
+        
+        public string CountryFlag(string sCountryISOCode)
+        {
+            CountryInfoService.CountryFlagRequest inValue = new CountryInfoService.CountryFlagRequest();
+            inValue.Body = new CountryInfoService.CountryFlagRequestBody();
+            inValue.Body.sCountryISOCode = sCountryISOCode;
+            CountryInfoService.CountryFlagResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).CountryFlag(inValue);
+            return retVal.Body.CountryFlagResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2212,6 +2484,21 @@ namespace CountryInfoService
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.CountryIntPhoneCodeResponse CountryInfoService.CountryInfoServiceSoapType.CountryIntPhoneCode(CountryInfoService.CountryIntPhoneCodeRequest request)
+        {
+            return base.Channel.CountryIntPhoneCode(request);
+        }
+        
+        public string CountryIntPhoneCode(string sCountryISOCode)
+        {
+            CountryInfoService.CountryIntPhoneCodeRequest inValue = new CountryInfoService.CountryIntPhoneCodeRequest();
+            inValue.Body = new CountryInfoService.CountryIntPhoneCodeRequestBody();
+            inValue.Body.sCountryISOCode = sCountryISOCode;
+            CountryInfoService.CountryIntPhoneCodeResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).CountryIntPhoneCode(inValue);
+            return retVal.Body.CountryIntPhoneCodeResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<CountryInfoService.CountryIntPhoneCodeResponse> CountryInfoService.CountryInfoServiceSoapType.CountryIntPhoneCodeAsync(CountryInfoService.CountryIntPhoneCodeRequest request)
         {
             return base.Channel.CountryIntPhoneCodeAsync(request);
@@ -2223,6 +2510,21 @@ namespace CountryInfoService
             inValue.Body = new CountryInfoService.CountryIntPhoneCodeRequestBody();
             inValue.Body.sCountryISOCode = sCountryISOCode;
             return ((CountryInfoService.CountryInfoServiceSoapType)(this)).CountryIntPhoneCodeAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.FullCountryInfoResponse CountryInfoService.CountryInfoServiceSoapType.FullCountryInfo(CountryInfoService.FullCountryInfoRequest request)
+        {
+            return base.Channel.FullCountryInfo(request);
+        }
+        
+        public CountryInfoService.tCountryInfo FullCountryInfo(string sCountryISOCode)
+        {
+            CountryInfoService.FullCountryInfoRequest inValue = new CountryInfoService.FullCountryInfoRequest();
+            inValue.Body = new CountryInfoService.FullCountryInfoRequestBody();
+            inValue.Body.sCountryISOCode = sCountryISOCode;
+            CountryInfoService.FullCountryInfoResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).FullCountryInfo(inValue);
+            return retVal.Body.FullCountryInfoResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2240,6 +2542,20 @@ namespace CountryInfoService
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.FullCountryInfoAllCountriesResponse CountryInfoService.CountryInfoServiceSoapType.FullCountryInfoAllCountries(CountryInfoService.FullCountryInfoAllCountriesRequest request)
+        {
+            return base.Channel.FullCountryInfoAllCountries(request);
+        }
+        
+        public CountryInfoService.tCountryInfo[] FullCountryInfoAllCountries()
+        {
+            CountryInfoService.FullCountryInfoAllCountriesRequest inValue = new CountryInfoService.FullCountryInfoAllCountriesRequest();
+            inValue.Body = new CountryInfoService.FullCountryInfoAllCountriesRequestBody();
+            CountryInfoService.FullCountryInfoAllCountriesResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).FullCountryInfoAllCountries(inValue);
+            return retVal.Body.FullCountryInfoAllCountriesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<CountryInfoService.FullCountryInfoAllCountriesResponse> CountryInfoService.CountryInfoServiceSoapType.FullCountryInfoAllCountriesAsync(CountryInfoService.FullCountryInfoAllCountriesRequest request)
         {
             return base.Channel.FullCountryInfoAllCountriesAsync(request);
@@ -2250,6 +2566,21 @@ namespace CountryInfoService
             CountryInfoService.FullCountryInfoAllCountriesRequest inValue = new CountryInfoService.FullCountryInfoAllCountriesRequest();
             inValue.Body = new CountryInfoService.FullCountryInfoAllCountriesRequestBody();
             return ((CountryInfoService.CountryInfoServiceSoapType)(this)).FullCountryInfoAllCountriesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.CountriesUsingCurrencyResponse CountryInfoService.CountryInfoServiceSoapType.CountriesUsingCurrency(CountryInfoService.CountriesUsingCurrencyRequest request)
+        {
+            return base.Channel.CountriesUsingCurrency(request);
+        }
+        
+        public CountryInfoService.tCountryCodeAndName[] CountriesUsingCurrency(string sISOCurrencyCode)
+        {
+            CountryInfoService.CountriesUsingCurrencyRequest inValue = new CountryInfoService.CountriesUsingCurrencyRequest();
+            inValue.Body = new CountryInfoService.CountriesUsingCurrencyRequestBody();
+            inValue.Body.sISOCurrencyCode = sISOCurrencyCode;
+            CountryInfoService.CountriesUsingCurrencyResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).CountriesUsingCurrency(inValue);
+            return retVal.Body.CountriesUsingCurrencyResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2267,6 +2598,20 @@ namespace CountryInfoService
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.ListOfLanguagesByNameResponse CountryInfoService.CountryInfoServiceSoapType.ListOfLanguagesByName(CountryInfoService.ListOfLanguagesByNameRequest request)
+        {
+            return base.Channel.ListOfLanguagesByName(request);
+        }
+        
+        public CountryInfoService.tLanguage[] ListOfLanguagesByName()
+        {
+            CountryInfoService.ListOfLanguagesByNameRequest inValue = new CountryInfoService.ListOfLanguagesByNameRequest();
+            inValue.Body = new CountryInfoService.ListOfLanguagesByNameRequestBody();
+            CountryInfoService.ListOfLanguagesByNameResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).ListOfLanguagesByName(inValue);
+            return retVal.Body.ListOfLanguagesByNameResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<CountryInfoService.ListOfLanguagesByNameResponse> CountryInfoService.CountryInfoServiceSoapType.ListOfLanguagesByNameAsync(CountryInfoService.ListOfLanguagesByNameRequest request)
         {
             return base.Channel.ListOfLanguagesByNameAsync(request);
@@ -2277,6 +2622,20 @@ namespace CountryInfoService
             CountryInfoService.ListOfLanguagesByNameRequest inValue = new CountryInfoService.ListOfLanguagesByNameRequest();
             inValue.Body = new CountryInfoService.ListOfLanguagesByNameRequestBody();
             return ((CountryInfoService.CountryInfoServiceSoapType)(this)).ListOfLanguagesByNameAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.ListOfLanguagesByCodeResponse CountryInfoService.CountryInfoServiceSoapType.ListOfLanguagesByCode(CountryInfoService.ListOfLanguagesByCodeRequest request)
+        {
+            return base.Channel.ListOfLanguagesByCode(request);
+        }
+        
+        public CountryInfoService.tLanguage[] ListOfLanguagesByCode()
+        {
+            CountryInfoService.ListOfLanguagesByCodeRequest inValue = new CountryInfoService.ListOfLanguagesByCodeRequest();
+            inValue.Body = new CountryInfoService.ListOfLanguagesByCodeRequestBody();
+            CountryInfoService.ListOfLanguagesByCodeResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).ListOfLanguagesByCode(inValue);
+            return retVal.Body.ListOfLanguagesByCodeResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2293,6 +2652,21 @@ namespace CountryInfoService
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.LanguageNameResponse CountryInfoService.CountryInfoServiceSoapType.LanguageName(CountryInfoService.LanguageNameRequest request)
+        {
+            return base.Channel.LanguageName(request);
+        }
+        
+        public string LanguageName(string sISOCode)
+        {
+            CountryInfoService.LanguageNameRequest inValue = new CountryInfoService.LanguageNameRequest();
+            inValue.Body = new CountryInfoService.LanguageNameRequestBody();
+            inValue.Body.sISOCode = sISOCode;
+            CountryInfoService.LanguageNameResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).LanguageName(inValue);
+            return retVal.Body.LanguageNameResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<CountryInfoService.LanguageNameResponse> CountryInfoService.CountryInfoServiceSoapType.LanguageNameAsync(CountryInfoService.LanguageNameRequest request)
         {
             return base.Channel.LanguageNameAsync(request);
@@ -2304,6 +2678,21 @@ namespace CountryInfoService
             inValue.Body = new CountryInfoService.LanguageNameRequestBody();
             inValue.Body.sISOCode = sISOCode;
             return ((CountryInfoService.CountryInfoServiceSoapType)(this)).LanguageNameAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CountryInfoService.LanguageISOCodeResponse CountryInfoService.CountryInfoServiceSoapType.LanguageISOCode(CountryInfoService.LanguageISOCodeRequest request)
+        {
+            return base.Channel.LanguageISOCode(request);
+        }
+        
+        public string LanguageISOCode(string sLanguageName)
+        {
+            CountryInfoService.LanguageISOCodeRequest inValue = new CountryInfoService.LanguageISOCodeRequest();
+            inValue.Body = new CountryInfoService.LanguageISOCodeRequestBody();
+            inValue.Body.sLanguageName = sLanguageName;
+            CountryInfoService.LanguageISOCodeResponse retVal = ((CountryInfoService.CountryInfoServiceSoapType)(this)).LanguageISOCode(inValue);
+            return retVal.Body.LanguageISOCodeResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

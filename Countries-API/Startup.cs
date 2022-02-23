@@ -1,4 +1,5 @@
 using Countries_API.Data;
+using Countries_API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +35,9 @@ namespace Countries_API
             services.AddControllers();
 
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString));
+
+            //Configure services
+            services.AddTransient<CountriesService>();
 
             services.AddSwaggerGen(c =>
             {
