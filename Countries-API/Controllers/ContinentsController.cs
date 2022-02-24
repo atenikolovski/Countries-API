@@ -3,6 +3,7 @@ using Countries_API.Data.ViewModels;
 using Countries_API.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,18 +15,31 @@ namespace Countries_API.Controllers
     [ApiController]
     public class ContinentsController : ControllerBase
     {
+        private IMemoryCache _cache;
         public ContinentsService _continentsService;
 
-        public ContinentsController(ContinentsService continentsService)
+        public ContinentsController(IMemoryCache cache, ContinentsService continentsService)
         {
+            _cache = cache;
             _continentsService = continentsService;
         }
 
         [HttpGet("{continentCode}/languages")]
         public List<LanguageVM> GetLanguagesByContinent(string continentCode)
         {
-            var a = _continentsService.GetLanguagesByContinent(continentCode);
-            return a;
+            List<LanguageVM> languagesByContinent = new List<LanguageVM>();
+            
+            //See if response is already cached
+            bool isCached = _cache.TryGetValue("LanguagesByContinent", out languagesByContinent);
+
+            if (!isCached) //If response is not cached, get the response and cache it
+            {
+                languagesByContinent = _continentsService.GetLanguagesByContinent(continentCode);
+                var cacheEntryOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromSeconds(40));
+                _cache.Set("LanguagesByContinent", languagesByContinent, cacheEntryOptions);
+            }
+
+            return languagesByContinent;
         }
     }
 }

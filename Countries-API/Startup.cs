@@ -39,6 +39,7 @@ namespace Countries_API
             //Configure services
             services.AddTransient<CountriesService>();
             services.AddTransient<ContinentsService>();
+            services.AddMemoryCache();
 
             services.AddSwaggerGen(c =>
             {
