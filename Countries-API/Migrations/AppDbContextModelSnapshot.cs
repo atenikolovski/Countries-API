@@ -20,8 +20,10 @@ namespace Countries_API.Migrations
 
             modelBuilder.Entity("Countries_API.Data.Models.Country", b =>
                 {
-                    b.Property<string>("ISOCode")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("CapitalCity")
                         .HasColumnType("nvarchar(max)");
@@ -32,10 +34,13 @@ namespace Countries_API.Migrations
                     b.Property<string>("CountryFlag")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ISOCode")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ISOCode");
+                    b.HasKey("Id");
 
                     b.ToTable("Countries");
                 });
@@ -47,8 +52,8 @@ namespace Countries_API.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("CountryISOCode")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("CountryId")
+                        .HasColumnType("int");
 
                     b.Property<string>("IsoCode")
                         .HasColumnType("nvarchar(max)");
@@ -58,16 +63,18 @@ namespace Countries_API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CountryISOCode");
+                    b.HasIndex("CountryId");
 
-                    b.ToTable("Language");
+                    b.ToTable("Languages");
                 });
 
             modelBuilder.Entity("Countries_API.Data.Models.Language", b =>
                 {
                     b.HasOne("Countries_API.Data.Models.Country", null)
                         .WithMany("Languages")
-                        .HasForeignKey("CountryISOCode");
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Countries_API.Data.Models.Country", b =>

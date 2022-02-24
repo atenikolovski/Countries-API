@@ -15,5 +15,6 @@ namespace Countries_API.Data
         }
 
         public DbSet<Country> Countries { get; set; }
+        public DbSet<Language> Languages { get; set; }
     }
 }

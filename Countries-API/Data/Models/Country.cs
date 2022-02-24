@@ -8,7 +8,12 @@ namespace Countries_API.Data.Models
 {
     public class Country
     {
-        [Key]
+        public Country()
+        {
+            Languages = new List<Language>();
+        }
+
+        public int Id { get; set; }
         public string ISOCode { get; set; }
         public string Name { get; set; }
         public string CapitalCity { get; set; }

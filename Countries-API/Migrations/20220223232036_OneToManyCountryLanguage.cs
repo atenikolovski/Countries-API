@@ -2,7 +2,7 @@
 
 namespace Countries_API.Migrations
 {
-    public partial class CreateTablesLanguageAndCountries : Migration
+    public partial class OneToManyCountryLanguage : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -10,7 +10,9 @@ namespace Countries_API.Migrations
                 name: "Countries",
                 columns: table => new
                 {
-                    ISOCode = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ISOCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CapitalCity = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ContinentCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -18,40 +20,40 @@ namespace Countries_API.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Countries", x => x.ISOCode);
+                    table.PrimaryKey("PK_Countries", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Language",
+                name: "Languages",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     IsoCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CountryISOCode = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    CountryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Language", x => x.Id);
+                    table.PrimaryKey("PK_Languages", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Language_Countries_CountryISOCode",
-                        column: x => x.CountryISOCode,
+                        name: "FK_Languages_Countries_CountryId",
+                        column: x => x.CountryId,
                         principalTable: "Countries",
-                        principalColumn: "ISOCode",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Language_CountryISOCode",
-                table: "Language",
-                column: "CountryISOCode");
+                name: "IX_Languages_CountryId",
+                table: "Languages",
+                column: "CountryId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Language");
+                name: "Languages");
 
             migrationBuilder.DropTable(
                 name: "Countries");

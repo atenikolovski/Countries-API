@@ -13,40 +13,40 @@ namespace Countries_API.Mappers
         {
             List<Country> mappedCountries = new List<Country>();
 
-                foreach (var countryInfo in countries)
+            foreach (var countryInfo in countries)
+            {
+                #region Map Language
+                List<Language> languages = new List<Language>();
+
+                if (countryInfo.Languages != null && countryInfo.Languages.Length > 0)
                 {
-                    #region Map Language
-                    List<Language> languages = new List<Language>();
-                  
-                    if (countryInfo.Languages != null && countryInfo.Languages.Length > 0)
+                    foreach (var languageCountry in countryInfo.Languages)
                     {
-                        foreach(var languageCountry in countryInfo.Languages)
+                        var language = new Language
                         {
-                            var language = new Language
-                            {
-                                IsoCode = languageCountry.sISOCode,
-                                Name = languageCountry.sName
-                            };
+                            IsoCode = languageCountry.sISOCode,
+                            Name = languageCountry.sName
+                        };
 
-                            languages.Add(language);
-                        }
+                        languages.Add(language);
                     }
-                    #endregion
-
-                    var country = new Country
-                    {
-                        ISOCode = countryInfo.sISOCode,
-                        Name = countryInfo.sName,
-                        CapitalCity = countryInfo.sCapitalCity,
-                        ContinentCode = countryInfo.sContinentCode,
-                        CountryFlag = countryInfo.sCountryFlag,
-                        Languages = languages
-                    };
-
-                    mappedCountries.Add(country);
                 }
+                #endregion
 
-                return mappedCountries;           
+                var country = new Country
+                {
+                    ISOCode = countryInfo.sISOCode,
+                    Name = countryInfo.sName,
+                    CapitalCity = countryInfo.sCapitalCity,
+                    ContinentCode = countryInfo.sContinentCode,
+                    CountryFlag = countryInfo.sCountryFlag,
+                    Languages = languages
+                };
+
+                mappedCountries.Add(country);
+            }
+
+            return mappedCountries;           
         }
     }
 }
