@@ -1,5 +1,7 @@
 ﻿using Countries_API.Data;
 using Countries_API.Data.Models;
+using Countries_API.Data.ViewModels;
+using Countries_API.Helpers;
 using CountryInfoService;
 using System;
 using System.Collections.Generic;
@@ -56,5 +58,18 @@ namespace Countries_API.Services
             }
             
         }
+        public FileVM GetCountryFlag(string countryIsoCode)
+        {
+            var flagResponse = new FileVM();
+
+            var fileUrl = _dbContext.Countries.FirstOrDefault(x => x.ISOCode == countryIsoCode).CountryFlag;
+
+            var flagFileBytes = CountriesHelper.DownloadImage("ImageData", countryIsoCode, fileUrl);
+
+            CountriesHelper.CreateFileVMResponse(countryIsoCode, flagFileBytes, out flagResponse); 
+
+            return flagResponse;
+        }
     }
+
 }

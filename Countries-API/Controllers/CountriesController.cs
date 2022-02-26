@@ -1,4 +1,5 @@
-﻿using Countries_API.Services;
+﻿using Countries_API.Data.ViewModels;
+using Countries_API.Services;
 using CountryInfoService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -24,6 +25,14 @@ namespace Countries_API.Controllers
         public void Populate()
         {
             _countriesService.PopulateCountries();
+        }
+
+        [HttpGet("{isoCode}/flag")]
+        public FileVM GetCountryFlag(string isoCode)
+        {
+            var file = _countriesService.GetCountryFlag(isoCode);
+
+            return file;
         }
     }
 }
