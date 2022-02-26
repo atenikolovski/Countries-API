@@ -5,6 +5,7 @@ using Countries_API.Helpers;
 using CountryInfoService;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -64,9 +65,23 @@ namespace Countries_API.Services
 
             var fileUrl = _dbContext.Countries.FirstOrDefault(x => x.ISOCode == countryIsoCode).CountryFlag;
 
-            var flagFileBytes = CountriesHelper.DownloadImage("ImageData", countryIsoCode, fileUrl);
+            // Get the file extension
+            var uri = new Uri(fileUrl);
+            var uriWithoutQuery = uri.GetLeftPart(UriPartial.Path);
+            var fileExtension = Path.GetExtension(uriWithoutQuery);
 
-            CountriesHelper.CreateFileVMResponse(countryIsoCode, flagFileBytes, out flagResponse); 
+            //Check if file already exists on disk, if exists get it from the disk
+            if (File.Exists("ImageData\\" + countryIsoCode + fileExtension))
+            {
+                var fileOnDisk = File.ReadAllBytes("ImageData\\" + countryIsoCode + fileExtension);
+                CountriesHelper.CreateFileVMResponse(countryIsoCode, fileOnDisk, out flagResponse);
+            }
+            //If the file does not exist on the disk, download it and write it on the disk
+            else
+            {                
+                var flagFileBytes = CountriesHelper.DownloadImageAndSaveOnDisk("ImageData", countryIsoCode, fileUrl, fileExtension);
+                CountriesHelper.CreateFileVMResponse(countryIsoCode, flagFileBytes, out flagResponse);
+            }
 
             return flagResponse;
         }

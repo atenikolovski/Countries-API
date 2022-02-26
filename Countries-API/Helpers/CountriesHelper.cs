@@ -33,23 +33,18 @@ namespace Countries_API.Helpers
             return imageBytes;
         }
 
-        public static byte[] DownloadImage(string directoryPath, string fileName, string fileUrl)
+        public static byte[] DownloadImageAndSaveOnDisk(string directoryPath, string fileName, string fileUrl, string fileExtension)
         {
             using(WebClient webClient = new WebClient())
             {
                 // Download the image and write to the file
                 var imageBytes = webClient.DownloadData(fileUrl);
 
-                // Get the file extension
-                var uri = new Uri(fileUrl);
-                var uriWithoutQuery = uri.GetLeftPart(UriPartial.Path);
-                var fileExtension = Path.GetExtension(uriWithoutQuery);
-
                 // Create file path and ensure directory exists
                 var path = Path.Combine(directoryPath, $"{fileName}{fileExtension}");
                 Directory.CreateDirectory(directoryPath);
 
-                //Write on disk
+                //Write the file on disk
                 File.WriteAllBytes(path, imageBytes);
 
                 return imageBytes;
@@ -62,7 +57,7 @@ namespace Countries_API.Helpers
             {
                 FileName = fileName,
                 FileBase64 = Convert.ToBase64String(fileBytes),
-                FileSha256 = EncodeToSHA256(fileBytes)
+                Sha256 = EncodeToSHA256(fileBytes)
             };
         }
 
