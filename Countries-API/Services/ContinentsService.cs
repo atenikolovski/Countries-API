@@ -1,6 +1,7 @@
 ﻿using Countries_API.Data;
 using Countries_API.Data.Models;
 using Countries_API.Data.ViewModels;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,10 +13,12 @@ namespace Countries_API.Services
     public class ContinentsService
     {
         private AppDbContext _dbContext;
+        private readonly ILogger<ContinentsService> _logger;
 
-        public ContinentsService(AppDbContext dbContext)
+        public ContinentsService(AppDbContext dbContext, ILogger<ContinentsService> logger)
         {
             _dbContext = dbContext;
+            _logger = logger;
         }
 
         public List<LanguageVM> GetLanguagesByContinent(string continentCode)
@@ -28,11 +31,13 @@ namespace Countries_API.Services
 
             if(languagesByContinent != null && languagesByContinent.Count > 0)
             {
+                _logger.LogInformation("Getting Languages for continentCode: " + continentCode);
+
                 return languagesByContinent;
             }
             else
             {
-                throw new KeyNotFoundException("Entered continent code does not exists.")
+                throw new KeyNotFoundException("Continent with the entered continent code does not exists.");
             }
 
         }

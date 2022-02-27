@@ -4,6 +4,7 @@ using Countries_API.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +18,13 @@ namespace Countries_API.Controllers
     {
         private IMemoryCache _cache;
         public ContinentsService _continentsService;
+        private readonly ILogger<ContinentsController> _logger;
 
-        public ContinentsController(IMemoryCache cache, ContinentsService continentsService)
+        public ContinentsController(IMemoryCache cache, ContinentsService continentsService, ILogger<ContinentsController> logger)
         {
             _cache = cache;
             _continentsService = continentsService;
+            _logger = logger;
         }
 
         [HttpGet("{continentCode}/languages")]
@@ -29,6 +32,8 @@ namespace Countries_API.Controllers
         {
             try
             {
+                _logger.LogInformation("Called continents/{continentCode}/languages.");
+
                 List<LanguageVM> languagesByContinent;
 
                 //See if response is already cached
@@ -40,16 +45,22 @@ namespace Countries_API.Controllers
                     var cacheEntryOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromSeconds(40));
                     _cache.Set("LanguagesByContinent" + continentCode, languagesByContinent, cacheEntryOptions);
                 }
-                
+
+                _logger.LogInformation("Finished continents/{continentCode}/languages.");
+
                 return Ok(languagesByContinent);
                 
             }
             catch(KeyNotFoundException ex)
             {
+                _logger.LogWarning(ex.Message);
+
                 return NotFound(ex.Message);
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message + "at: " + ex.StackTrace);
+
                 return BadRequest(ex.Message + "at: " + ex.StackTrace);
             }
 

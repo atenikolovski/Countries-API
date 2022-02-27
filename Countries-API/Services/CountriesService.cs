@@ -3,6 +3,7 @@ using Countries_API.Data.Models;
 using Countries_API.Data.ViewModels;
 using Countries_API.Helpers;
 using CountryInfoService;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,10 +15,12 @@ namespace Countries_API.Services
     public class CountriesService
     {
         private AppDbContext _dbContext;
+        private readonly ILogger<CountriesService> _logger;
 
-        public CountriesService(AppDbContext dbContext)
+        public CountriesService(AppDbContext dbContext, ILogger<CountriesService> logger)
         {
             _dbContext = dbContext;
+            _logger = logger;
         }
 
         public List<Country> PopulateCountries()
@@ -69,6 +72,8 @@ namespace Countries_API.Services
 
                 if(country != null)
                 {
+                    _logger.LogInformation("Getting Country Flag for country: " + country.Name);
+
                     var fileUrl = country.CountryFlag;
 
                     // Get the file extension
