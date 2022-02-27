@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -22,17 +23,38 @@ namespace Countries_API.Controllers
         }
 
         [HttpPost("populate")]
-        public void Populate()
+        public IActionResult Populate()
         {
-            _countriesService.PopulateCountries();
+            try
+            {
+                var countries = _countriesService.PopulateCountries();
+
+                return Created(nameof(Populate), countries);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message + "Exception: " + ex.StackTrace);
+            }           
         }
 
         [HttpGet("{isoCode}/flag")]
-        public FileVM GetCountryFlag(string isoCode)
+        public IActionResult GetCountryFlag(string isoCode)
         {
-            var file = _countriesService.GetCountryFlag(isoCode);
+            try
+            {
+                var flagFile = _countriesService.GetCountryFlag(isoCode);
+                
+                return Ok(flagFile);
+            }
+            catch(FileNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message + "at: " + ex.StackTrace);
+            }
 
-            return file;
         }
     }
 }

@@ -25,21 +25,34 @@ namespace Countries_API.Controllers
         }
 
         [HttpGet("{continentCode}/languages")]
-        public List<LanguageVM> GetLanguagesByContinent(string continentCode)
+        public IActionResult GetLanguagesByContinent(string continentCode)
         {
-            List<LanguageVM> languagesByContinent = new List<LanguageVM>();
-            
-            //See if response is already cached
-            bool isCached = _cache.TryGetValue("LanguagesByContinent", out languagesByContinent);
-
-            if (!isCached) //If response is not cached, get the response and cache it
+            try
             {
-                languagesByContinent = _continentsService.GetLanguagesByContinent(continentCode);
-                var cacheEntryOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromSeconds(40));
-                _cache.Set("LanguagesByContinent", languagesByContinent, cacheEntryOptions);
+                List<LanguageVM> languagesByContinent;
+
+                //See if response is already cached
+                bool isCached = _cache.TryGetValue("LanguagesByContinent" + continentCode, out languagesByContinent);
+
+                if (!isCached) //If response is not cached, get the response and cache it
+                {
+                    languagesByContinent = _continentsService.GetLanguagesByContinent(continentCode);
+                    var cacheEntryOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromSeconds(40));
+                    _cache.Set("LanguagesByContinent" + continentCode, languagesByContinent, cacheEntryOptions);
+                }
+                
+                return Ok(languagesByContinent);
+                
+            }
+            catch(KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message + "at: " + ex.StackTrace);
             }
 
-            return languagesByContinent;
         }
     }
 }

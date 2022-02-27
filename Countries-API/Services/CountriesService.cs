@@ -20,7 +20,7 @@ namespace Countries_API.Services
             _dbContext = dbContext;
         }
 
-        public void PopulateCountries()
+        public List<Country> PopulateCountries()
         {
             try
             {
@@ -52,38 +52,49 @@ namespace Countries_API.Services
 
                     _dbContext.SaveChanges();
                 }
+
+                return countries;
             }
             catch(Exception ex)
             {
-                throw ex;
+                throw new Exception("Error occured while populating countries", ex);
             }
             
         }
         public FileVM GetCountryFlag(string countryIsoCode)
         {
-            var flagResponse = new FileVM();
+                var flagResponse = new FileVM();
 
-            var fileUrl = _dbContext.Countries.FirstOrDefault(x => x.ISOCode == countryIsoCode).CountryFlag;
+                var country = _dbContext.Countries.FirstOrDefault(x => x.ISOCode == countryIsoCode);
 
-            // Get the file extension
-            var uri = new Uri(fileUrl);
-            var uriWithoutQuery = uri.GetLeftPart(UriPartial.Path);
-            var fileExtension = Path.GetExtension(uriWithoutQuery);
+                if(country != null)
+                {
+                    var fileUrl = country.CountryFlag;
 
-            //Check if file already exists on disk, if exists get it from the disk
-            if (File.Exists("ImageData\\" + countryIsoCode + fileExtension))
-            {
-                var fileOnDisk = File.ReadAllBytes("ImageData\\" + countryIsoCode + fileExtension);
-                CountriesHelper.CreateFileVMResponse(countryIsoCode, fileOnDisk, out flagResponse);
-            }
-            //If the file does not exist on the disk, download it and write it on the disk
-            else
-            {                
-                var flagFileBytes = CountriesHelper.DownloadImageAndSaveOnDisk("ImageData", countryIsoCode, fileUrl, fileExtension);
-                CountriesHelper.CreateFileVMResponse(countryIsoCode, flagFileBytes, out flagResponse);
-            }
+                    // Get the file extension
+                    var uri = new Uri(fileUrl);
+                    var uriWithoutQuery = uri.GetLeftPart(UriPartial.Path);
+                    var fileExtension = Path.GetExtension(uriWithoutQuery);
 
-            return flagResponse;
+                    //Check if file already exists on disk, if exists get it from the disk
+                    if (File.Exists("ImageData\\" + countryIsoCode + fileExtension))
+                    {
+                        var fileOnDisk = File.ReadAllBytes("ImageData\\" + countryIsoCode + fileExtension);
+                        CountriesHelper.CreateFileVMResponse(countryIsoCode, fileOnDisk, out flagResponse);
+                    }
+                    //If the file does not exist on the disk, download it and write it on the disk
+                    else
+                    {
+                        var flagFileBytes = CountriesHelper.DownloadImageAndSaveOnDisk("ImageData", countryIsoCode, fileUrl, fileExtension);
+                        CountriesHelper.CreateFileVMResponse(countryIsoCode, flagFileBytes, out flagResponse);
+                    }
+
+                    return flagResponse;
+                }
+                else //Country with entered code does not exists
+                {
+                    throw new FileNotFoundException("Country with entered code does not exists");
+                }
         }
     }
 
