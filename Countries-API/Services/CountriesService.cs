@@ -60,7 +60,7 @@ namespace Countries_API.Services
             }
             catch(Exception ex)
             {
-                throw new Exception("Error occured while populating countries", ex);
+                throw new Exception("Error occured while populating countries " + ex.Message, ex);
             }
             
         }
